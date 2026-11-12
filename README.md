@@ -43,7 +43,7 @@ O sistema é dividido em duas partes:
 ## ✨ Funcionalidades
 
 ### 👤 Cliente
-- Cadastro, login e edição dos próprios dados
+- Cadastro, login e edição dos próprios dados, com **foto de perfil** (câmera ou galeria)
 - Busca de serviços por nome, categoria ou profissional
 - Agendamento em 4 etapas: **serviço → profissional → data e hora → confirmação**
 - Calendário com dias e horários realmente livres (dias sem vaga ficam desabilitados)
@@ -55,7 +55,7 @@ O sistema é dividido em duas partes:
 - Agenda do dia e da semana (somente a própria agenda)
 - Confirmar, cancelar e registrar atendimentos como realizados
 - Bloquear horários (almoço, folga, compromisso)
-- Lista de clientes atendidos
+- Lista de clientes atendidos (com foto)
 - Notificações de novos agendamentos, com contador
 
 ### 🛠️ Administrador
@@ -177,7 +177,7 @@ Todas as rotas, exceto `/api/auth/**`, exigem o cabeçalho `Authorization: Beare
 | Área | Método e rota | Descrição |
 |---|---|---|
 | Autenticação | `POST /api/auth/login` · `POST /api/auth/register` | Entrar e cadastrar cliente |
-| Perfil | `PUT /api/me` | Atualizar nome e telefone |
+| Perfil | `PUT /api/me` · `PUT/DELETE /api/me/foto` · `GET /api/fotos/{usuarioId}` | Atualizar dados e foto de perfil |
 | Consulta | `GET /api/servicos` · `GET /api/profissionais` | Serviços ativos e profissionais |
 | Disponibilidade | `GET /api/agenda/dias` · `GET /api/agenda/horarios` | Dias e horários livres |
 | Cliente | `POST/GET /api/cliente/agendamentos` · `PUT …/{id}/remarcar` · `PATCH …/{id}/cancelar` | Agendar, listar, remarcar, cancelar |
@@ -209,9 +209,9 @@ No `backend/src/main/resources/application.yml`:
 
 - Não há integração com WhatsApp, pagamento online nem notificações push; os avisos ficam dentro do aplicativo.
 - A recuperação de senha por e-mail ainda não existe ("Esqueci minha senha" orienta procurar o administrador).
-- As fotos de perfil são apenas dos usuários de demonstração; os demais mostram as iniciais.
+- A foto de perfil é guardada no banco de dados (JPEG/PNG, até 2 MB, reduzida para 512x512 no aparelho). Quem não envia foto mostra as iniciais.
 - O tráfego HTTP sem criptografia está liberado apenas para desenvolvimento. Em produção, use **HTTPS**.
-- O layout segue o Figma em estrutura, cores, fontes e fotos, mas pequenas diferenças de espaçamento e ícones são esperadas.
+- O visual foi aprimorado a partir do Figma (cabeçalhos em degradê, cartões, ícones vetoriais), então há diferenças em relação ao protótipo original.
 
 ## 🗺️ Próximos passos sugeridos
 
@@ -219,6 +219,4 @@ No `backend/src/main/resources/application.yml`:
 - Recuperação de senha por e-mail
 - Upload de foto de perfil e logomarca do estabelecimento
 - Avaliações de atendimentos
-- Testes automatizados e publicação do servidor com HTTPS
-
-
+- Testes automatizados e publicação do servidor com HTTPS****
