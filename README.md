@@ -221,6 +221,4 @@ No `backend/src/main/resources/application.yml`:
 - Avaliações de atendimentos
 - Testes automatizados e publicação do servidor com HTTPS
 
-## 📄 Licença
 
-Projeto desenvolvido para fins acadêmicos e de portfólio. Defina aqui a licença de sua preferência (por exemplo, MIT).
