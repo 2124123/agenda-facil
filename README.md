@@ -43,7 +43,7 @@ O sistema é dividido em duas partes:
 ## ✨ Funcionalidades
 
 ### 👤 Cliente
-- Cadastro, login e edição dos próprios dados, com **foto de perfil** (câmera ou galeria)
+- Cadastro, login e edição dos próprios dados
 - Busca de serviços por nome, categoria ou profissional
 - Agendamento em 4 etapas: **serviço → profissional → data e hora → confirmação**
 - Calendário com dias e horários realmente livres (dias sem vaga ficam desabilitados)
