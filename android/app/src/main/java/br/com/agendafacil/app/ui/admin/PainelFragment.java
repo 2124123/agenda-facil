@@ -103,9 +103,9 @@ public class PainelFragment extends PageFragment {
         }
 
         Ui.add(list, Ui.sectionTitle(c, "Ações Rápidas"), 22);
-        acao("Gerenciar Serviços", v -> shell().selecionarAba(R.id.nav_servicos));
-        acao("Gerenciar Profissionais", v -> shell().selecionarAba(R.id.nav_equipe));
-        acao("Relatórios de Desempenho", v -> shell().abrir(new RelatoriosFragment()));
+        acao("Gerenciar Serviços", view -> shell().selecionarAba(R.id.nav_servicos));
+        acao("Gerenciar Profissionais", view  -> shell().selecionarAba(R.id.nav_equipe));
+        acao("Relatórios de Desempenho", view -> shell().abrir(new RelatoriosFragment()));
     }
 
     private void acao(String texto, android.view.View.OnClickListener ao) {

@@ -13,11 +13,8 @@ android {
         versionCode = 1
         versionName = "1.0"
 
-        // Endereço padrão da API. Emulador: 10.0.2.2 = localhost do computador.
-        // Para gerar um APK já apontando para o servidor online:
-        //   ./gradlew assembleDebug -PAPI_URL=https://meu-servidor.com/
-        // (o usuário também pode trocar na tela de login, em "Servidor")
-        val apiUrl = (project.findProperty("API_URL") as String?) ?: "http://10.0.2.2:8080/"
+        // URL padrão alterada para o Railway para que o app nunca fique sem servidor
+        val apiUrl = (project.findProperty("API_URL") as String?) ?: "https://agenda-facil-production-f7bdd7dc.up.railway.app/"
         buildConfigField("String", "API_BASE_URL", "\"$apiUrl\"")
     }
 
